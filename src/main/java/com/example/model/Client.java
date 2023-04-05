@@ -6,11 +6,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-//@data generates setters and getters
+
 //@entity treats as a database table.
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name="Client")
 public class Client {
@@ -18,6 +20,7 @@ public class Client {
 	//database column will be generated automaically and will be autoincreement in database.
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	
 	private int id ;
 	
 	@Column(name="firstName", nullable=false)
